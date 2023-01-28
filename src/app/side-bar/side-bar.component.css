@@ -1,0 +1,15 @@
+.toolbar{
+    background-color: greenyellow;
+}
+
+.content{
+    height: 88vh;
+}
+
+.list-item{
+    height: 50%;
+}
+
+.mainlist{
+    height: auto;
+}
