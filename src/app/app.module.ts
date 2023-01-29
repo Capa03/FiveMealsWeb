@@ -5,14 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { RestaurantContentComponent } from './restaurant-content/restaurant-content.component';
+
+import { QueueContentComponent } from './queue-content/queue-content.component';
+import { ProgressContentComponent } from './progress-content/progress-content.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent,
-    RestaurantContentComponent
+    QueueContentComponent,
+    ProgressContentComponent,
   ],
   imports: [
     BrowserModule,

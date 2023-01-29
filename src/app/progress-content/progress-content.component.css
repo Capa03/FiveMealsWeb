@@ -30,6 +30,7 @@
   }
   ul{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
   }
   ul li a{
@@ -43,5 +44,4 @@
   }
   ul li{
     margin:32px;
-
   }

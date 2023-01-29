@@ -1,0 +1,47 @@
+.vl {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 4px solid black;
+    height: calc(100vh - 98px);
+  }
+
+  body {
+    margin: 20px auto;
+    font-family: 'Lato';
+    background:#666;
+    color:#fff;
+  }
+  *{
+    margin:0;
+    padding:0;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  ul,li{
+    list-style:none;
+  }
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  ul li a{
+    text-decoration:none;
+    color:#000;
+    background:rgb(231, 178, 30);
+    display:block;
+    height:5em;
+    width:calc(80vh - 100px);
+    padding:1em;
+  }
+  ul li{
+    margin:32px;
+  }
