@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { RestaurantContentComponent } from './restaurant-content/restaurant-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent
+    SideBarComponent,
+    RestaurantContentComponent
   ],
   imports: [
     BrowserModule,
