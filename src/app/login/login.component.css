@@ -1,0 +1,17 @@
+
+.form-container{
+    
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 62px;
+
+    background: #eceff1;
+    padding: 48px;
+    border-radius: 16px;
+}
+
+.form-group{
+    border: 1rem;
+    justify-content: center;
+}

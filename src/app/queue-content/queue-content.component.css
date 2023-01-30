@@ -33,7 +33,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  ul li a{
+  ul li div{
     text-decoration:none;
     color:#000;
     background:rgb(231, 178, 30);
@@ -41,6 +41,7 @@
     height:5em;
     width:calc(80vh - 100px);
     padding:1em;
+    border-radius: 10px;
   }
   ul li{
     margin:32px;
