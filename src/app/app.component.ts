@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FiveMealsWeb';
+  setwindow1 = "";
+  setwindow2 = "";
+  
+  openOrder(){
+    this.setwindow1 = "<app-queue-content></app-queue-content>";
+    this.setwindow2 = "";
+  }
+
+  openDelevery(){
+    this.setwindow1 = "";
+    this.setwindow2 = "<app-progress-content></app-progress-content>";
+  }
 }
+

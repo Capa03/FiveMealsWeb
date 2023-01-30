@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { QueueContentComponent } from './queue-content/queue-content.component';
 import { ProgressContentComponent } from './progress-content/progress-content.component';
+import { DeleveryComponentComponent } from './delevery-component/delevery-component.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ProgressContentComponent } from './progress-content/progress-content.co
     AppComponent,
     QueueContentComponent,
     ProgressContentComponent,
+    DeleveryComponentComponent,
   ],
   imports: [
     BrowserModule,
