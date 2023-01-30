@@ -2,9 +2,9 @@
     background-color: #BBC310;
 }
 
-.spanLogo{
+.logout{
     position: absolute;
-    left: 50%;
+    left: 95%;
     transform: translateX(-50%);
     border-radius: 5px;
     height: 62px;
