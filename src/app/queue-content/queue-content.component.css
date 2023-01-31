@@ -36,7 +36,7 @@
   ul li div{
     text-decoration:none;
     color:#000;
-    background:rgb(231, 178, 30);
+    background:#eceff1;
     display:block;
     height:5em;
     width:calc(80vh - 100px);

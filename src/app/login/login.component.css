@@ -1,17 +1,32 @@
 
 .form-container{
-    
-    display: block;
-    max-width: 300px;
+    display: flex;
+    justify-content: center;
     margin: auto;
-    margin-top: 62px;
-
+    margin-top: 98px;
     background: #eceff1;
     padding: 48px;
-    border-radius: 16px;
 }
 
 .form-group{
     border: 1rem;
-    justify-content: center;
+}
+
+body{
+    height: 100vh;
+    background-color: #e0e0de;
+}
+
+.image{
+    max-width: 300px;
+    border-radius: 16px;
+}
+
+form{
+    margin-left:92px;
+    margin-top: 48px;
+}
+
+span{
+    margin-left: 16px;
 }

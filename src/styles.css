@@ -7,3 +7,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .toolbar {
     background-color: #BBC310;
 }
+
+.title{
+    margin-left: 3%;
+}
