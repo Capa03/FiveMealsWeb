@@ -5,6 +5,7 @@ import {User} from '../models/User'
 import {Token} from '../models/Token'
 import { AuthService } from '../services/authService';
 import { Product } from '../models/Product';
+import { CategoryWithProducts } from '../models/CategoryWithProducts';
 
 
 @Component({
@@ -26,12 +27,12 @@ export class LoginComponent {
 
   login(user: User){
     this.authService.login(user).subscribe((token : Token)=>
-      localStorage.setItem('Token',token.Token)
+      localStorage.setItem('Token',token.token)
     );
   }
 
   getProducts(){
-    this.authService.getProducts().subscribe((product : Product[]) =>{
+    this.authService.getProducts().subscribe((product : CategoryWithProducts) =>{
       console.log(product)
     })
   }

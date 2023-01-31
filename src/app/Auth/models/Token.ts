@@ -1,4 +1,4 @@
 export class Token{
-    Token = '';
-    Expiration = '';
+    token = '';
+    expiration = '';
 }

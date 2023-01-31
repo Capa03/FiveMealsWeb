@@ -19,6 +19,6 @@ export class AuthService {
   }
 
   public getProducts(): Observable<any>{
-    return this.http.get<any>('http://localhost:5011/Product')
+    return this.http.get<any>('http://localhost:5011/CategoryWithProducts/1')
   }
 }
