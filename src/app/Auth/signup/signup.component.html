@@ -32,12 +32,13 @@
                 <br>
                 <label for="confirmPassword">Confirm Password:</label>
                 <br>
-                <input formControlName="confirmPassword" id="confirmPassword" type="password" class="form-control">
+                <input [(ngModel)]="confirmPasswords" formControlName="confirmPassword" id="confirmPassword" type="password" class="form-control">
                 <span class="error" *ngIf="confirmPassword?.touched && confirmPassword?.invalid">confirmPassword is required</span>
             </div>
             <br>
             <button (click)="register(user)" mat-raised-button color="primary" >Submit</button>
             <span>Already have an Account? <a routerLink="/login">login</a></span>
+            <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
         </form>
     </div>
 

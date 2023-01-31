@@ -1,12 +1,12 @@
 
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {User} from '../models/User'
-import {Token} from '../models/Token'
+import { User } from '../models/User'
+import { Token } from '../models/Token'
 import { AuthService } from '../services/authService';
-import { Product } from '../models/Product';
+import { Router } from '@angular/router';
 import { CategoryWithProducts } from '../models/CategoryWithProducts';
-
+import { HttpHeaderResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -16,30 +16,40 @@ import { CategoryWithProducts } from '../models/CategoryWithProducts';
 
 export class LoginComponent {
   user = new User();
-  
-  constructor(private authService: AuthService){}
+  errormessage = "";
+  constructor(private authService: AuthService, public router: Router) { }
 
   loginForm = new FormGroup({
-    email: new FormControl('',Validators.required),
+    email: new FormControl('', Validators.required),
     password: new FormControl('')
   })
-  
 
-  login(user: User){
-    this.authService.login(user).subscribe((token : Token)=>
-      localStorage.setItem('Token',token.token)
-    );
+
+  login(user: User) {
+    this.authService.login(user).subscribe((token: Token) => {
+     // console.log(token.token)
+      if (token.token != 'undefined') {
+        localStorage.setItem('Token', token.token)
+        this.router.navigate(['/main'])
+        this.errormessage = "";
+      } 
+    },(error : HttpHeaderResponse)=>{
+      this.errormessage = "Email or Password are not correct or not exist!";
+    }
+    )
   }
 
-  getProducts(){
-    this.authService.getProducts().subscribe((product : CategoryWithProducts) =>{
+  getProducts() {
+    this.authService.getProducts().subscribe((product: CategoryWithProducts) => {
       console.log(product)
     })
   }
 
-  get email(){
+
+  get email() {
     return this.loginForm.get('email');
   }
+
 }
 
 

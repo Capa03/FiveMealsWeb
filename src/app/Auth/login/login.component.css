@@ -39,9 +39,6 @@ input.ng-valid{
     border-left: 5px solid green;
 }
 
-.error{
-    color: red;
-}
 
 label{
     font-size: large;
