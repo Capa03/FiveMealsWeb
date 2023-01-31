@@ -11,33 +11,34 @@
             <div class="form-group">
                 <label for="username">Username:</label>
                 <br>
-                <input formControlName="username" id="username" type="text" class="form-control">
+                <input [(ngModel)]="user.username" formControlName="username" id="username" type="text" class="form-control">
                 <span class="error" *ngIf="username?.touched && username?.invalid">Username is required</span>
             </div>
             <div class="form-group">
                 <br>
                 <label for="email">Email:</label>
                 <br>
-                <input formControlName="email" id="email" type="email" class="form-control">
+                <input [(ngModel)]="user.email" formControlName="email" id="email" type="email" class="form-control">
                 <span class="error" *ngIf="email?.touched && email?.invalid">Email is required</span>
             </div>
             <div class="form-group">
                 <br>
                 <label for="password">Password:</label>
                 <br>
-                <input formControlName="password" id="password" type="password" class="form-control">
+                <input [(ngModel)]="user.password" formControlName="password" id="password" type="password" class="form-control">
                 <span class="error" *ngIf="password?.touched && password?.invalid">Password is required</span>
             </div>
             <div class="form-group">
                 <br>
                 <label for="confirmPassword">Confirm Password:</label>
                 <br>
-                <input formControlName="confirmPassword" id="confirmPassword" type="password" class="form-control">
+                <input [(ngModel)]="confirmPasswords" formControlName="confirmPassword" id="confirmPassword" type="password" class="form-control">
                 <span class="error" *ngIf="confirmPassword?.touched && confirmPassword?.invalid">confirmPassword is required</span>
             </div>
             <br>
-            <button mat-raised-button color="primary" routerLink="/main">Submit</button>
+            <button (click)="register(user)" mat-raised-button color="primary" >Submit</button>
             <span>Already have an Account? <a routerLink="/login">login</a></span>
+            <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
         </form>
     </div>
 

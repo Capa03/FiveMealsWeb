@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { QueueContentComponent } from './queue-content/queue-content.component';
-import { ProgressContentComponent } from './progress-content/progress-content.component';
-import { DeleveryComponentComponent } from './delevery-component/delevery-component.component';
-import { MainComponent } from './main/main.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { QueueContentComponent } from './mainFolder/queue-content/queue-content.component';
+import { ProgressContentComponent } from './mainFolder/progress-content/progress-content.component';
+import { DeleveryComponentComponent } from './mainFolder/main/delevery-component/delevery-component.component';
+import { MainComponent } from './mainFolder/main/main.component';
+import { LoginComponent } from './Auth/login/login.component';
+import { SignupComponent } from './Auth/signup/signup.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './Auth/services/auth.interceptor';
 
 
 @NgModule({
@@ -28,9 +30,14 @@ import { SignupComponent } from './signup/signup.component';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
