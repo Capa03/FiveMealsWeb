@@ -27,7 +27,7 @@ export class LoginComponent {
 
   login(user: User) {
     this.authService.login(user).subscribe((token: Token) => {
-     // console.log(token.token)
+     
       if (token.token != 'undefined') {
         localStorage.setItem('Token', token.token)
         this.router.navigate(['/main'])
@@ -42,7 +42,7 @@ export class LoginComponent {
   getProducts() {
     this.authService.getProducts().subscribe((product: CategoryWithProducts) => {
       console.log(product)
-    })
+    });
   }
 
 
