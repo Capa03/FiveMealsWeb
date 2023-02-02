@@ -64,16 +64,18 @@ p {
 ul,
 li {
   list-style: none;
+  
 }
 
 ul {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
  
 }
 
 ul li .post {
+  margin-left: 50%;
   text-decoration: none;
   color: #000;
   background: #eceff1;
@@ -86,5 +88,6 @@ ul li .post {
 
 ul li {
   margin: 32px;
+  
 }
 

@@ -4,7 +4,8 @@
       <h2>{{progress.productName}}</h2>
       <img class="mat-elevation-z4" src={{progress.imgLink}} >
       <h4>Max Steps {{progress.maxSteps}}</h4>
-      <button class="mat-elevation-z4" (click)="updateOrderProduct(progress)"> Current Steps: {{progress.stepsMade}} </button>
+      <h4>Current Step {{progress.stepsMade}}</h4>
+      <button class="mat-elevation-z4" (click)="updateOrderProduct(progress)"> Next Step:</button>
     </div>
   </li>
 </ul>

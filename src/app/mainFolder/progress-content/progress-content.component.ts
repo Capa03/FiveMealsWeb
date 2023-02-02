@@ -30,4 +30,7 @@ export class ProgressContentComponent {
     this.mainService.updateOrderProducts(list);
   }
 
+
+  
+
 }
