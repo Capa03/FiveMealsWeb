@@ -27,14 +27,7 @@ export class QueueContentComponent {
    
     orderProduct.stepsMade++;
 
-    let dto: OrderProductPatchDTO = new OrderProductPatchDTO();
-
-    dto.orderProductID = orderProduct.orderProductID;
-    dto.orderId = orderProduct.orderId;
-    dto.stepsMade = orderProduct.stepsMade;
-    dto.paid = orderProduct.paid;
-
-    
-    this.mainService.updateOrderProducts(dto);
+    let list: OrderProductPatchDTO[] = [orderProduct];
+    this.mainService.updateOrderProducts(list);
   }
 }

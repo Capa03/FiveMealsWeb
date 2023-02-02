@@ -34,7 +34,7 @@ export class MainService {
     return this.http.get<OrderProduct[]>('http://localhost:5168/ForDeliveryProduct?restaurantId='+`${restaurantid}`, this.httpOptions);
   }
 
-  public updateOrderProducts(orderProduct : OrderProductPatchDTO)
+  public updateOrderProducts(orderProduct : OrderProductPatchDTO[])
   {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + localStorage.getItem('Token')
