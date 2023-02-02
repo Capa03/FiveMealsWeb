@@ -5,7 +5,6 @@ import { User } from '../models/User'
 import { Token } from '../models/Token'
 import { AuthService } from '../services/authService';
 import { Router } from '@angular/router';
-import { CategoryWithProducts } from '../models/CategoryWithProducts';
 import { HttpHeaderResponse } from '@angular/common/http';
 
 @Component({
@@ -37,12 +36,6 @@ export class LoginComponent {
       this.errormessage = "Email or Password are not correct or not exist!";
     }
     )
-  }
-
-  getProducts() {
-    this.authService.getProducts().subscribe((product: CategoryWithProducts) => {
-      console.log(product)
-    });
   }
 
 

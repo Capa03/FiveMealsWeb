@@ -11,14 +11,15 @@ export class AuthService {
   constructor(private http : HttpClient) { }
 
   public register(user: User): Observable<any>{
-    return this.http.post<any>('http://localhost:5011/User',user)
+    return this.http.post<any>('http://localhost:5168/User',user)
   }
   
   public login(user: User): Observable<any>{
-    return this.http.post<any>('http://localhost:5011/User/Token',user)
+    return this.http.post<any>('http://localhost:5168/User/Token',user)
   }
 
   public getProducts(): Observable<any>{
-    return this.http.get<any>('http://localhost:5011/CategoryWithProducts/1')
+    return this.http.get<any>('http://localhost:5168/CategoryWithProducts/1')
   }
+
 }

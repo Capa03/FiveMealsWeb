@@ -1,11 +1,10 @@
 <ul>
-    <li>
-      <div>
-        <h2>Progress #1</h2>
+  <li *ngFor="let progress of orderProgress">
+    <div>
+      <h2>{{progress.productName}}</h2>
       <p>Name:</p>
-      <p>Order</p>
       <p>Date</p>
       <button>+</button>
-      </div> 
-    </li>
-  </ul>
+    </div>
+  </li>
+</ul>

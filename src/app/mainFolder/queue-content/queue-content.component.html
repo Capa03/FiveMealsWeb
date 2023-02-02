@@ -1,11 +1,12 @@
 <ul>
-  <li>
+  <li *ngFor="let orderProduct of orderProducts ">
     <div>
-      <h2>Queue #1</h2>
-      <p>Name:</p>
-      <p>Order</p>
-      <p>Date</p>
-      <button>----></button>
+      <h2>{{orderProduct.productName}}</h2>
+      <img class="image" src={{orderProduct.imgLink}} >
+      <p>Name: {{orderProduct.productName}}</p>
+      <p>Date: {{orderProduct.orderedTime}}</p>
+      <button (click)="updateOrderProduct(orderProduct)">----></button>
     </div>
+     
   </li>
 </ul>

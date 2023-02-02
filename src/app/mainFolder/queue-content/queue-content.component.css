@@ -33,7 +33,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  ul li div{
+  ul li div {
     text-decoration:none;
     color:#000;
     background:#eceff1;
@@ -45,4 +45,8 @@
   }
   ul li{
     margin:32px;
+  }
+
+  .image{
+    height: 30%;
   }
