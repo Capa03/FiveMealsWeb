@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { QueueContentComponent } from './mainFolder/queue-content/queue-content.component';
 import { ProgressContentComponent } from './mainFolder/progress-content/progress-content.component';
-import { DeleveryComponentComponent } from './mainFolder/main/delevery-component/delevery-component.component';
+import { DeleveryComponentComponent } from './mainFolder/delevery-component/delevery-component.component';
 import { MainComponent } from './mainFolder/main/main.component';
 import { LoginComponent } from './Auth/login/login.component';
 import { SignupComponent } from './Auth/signup/signup.component';

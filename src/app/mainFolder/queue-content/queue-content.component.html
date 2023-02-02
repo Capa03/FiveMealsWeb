@@ -1,11 +1,10 @@
 <ul>
-  <li>
-    <div>
-      <h2>Queue #1</h2>
-      <p>Name:</p>
-      <p>Order</p>
-      <p>Date</p>
-      <button>----></button>
+  <li *ngFor="let orderProduct of orderProducts ">
+    <div class="post">
+      <h2>{{orderProduct.productName}}</h2>
+      <img class="mat-elevation-z4" src={{orderProduct.imgLink}} >
+      <h4>Max Steps {{orderProduct.maxSteps}}</h4>
+      <button class="mat-elevation-z4" (click)="updateOrderProduct(orderProduct)"> <mat-icon>arrow_right_alt</mat-icon></button>
     </div>
   </li>
 </ul>
