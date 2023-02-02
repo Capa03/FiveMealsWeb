@@ -1,10 +1,13 @@
 <ul>
   <li *ngFor="let progress of orderProgress">
-    <div>
+    <div class="post">
       <h2>{{progress.productName}}</h2>
-      <p>Name:</p>
-      <p>Date</p>
-      <button>+</button>
+      <img class="mat-elevation-z4" src={{progress.imgLink}} >
+      <h4>Max Steps {{progress.maxSteps}}</h4>
+      <button class="mat-elevation-z4" (click)="updateOrderProduct(progress)"> Current Steps: {{progress.stepsMade}} </button>
     </div>
   </li>
 </ul>
+
+
+

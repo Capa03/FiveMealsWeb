@@ -1,8 +1,10 @@
 <ul>
     <li *ngFor="let delivery of orderDelivery">
-        <div>
-            <h2>{{delivery.productName}}</h2>
-            <p>Text Content #1</p>
-        </div>
+      <div class="post">
+        <h2>{{delivery.productName}}</h2>
+        <img class="mat-elevation-z4" src={{delivery.imgLink}} >
+        <h4>Max Steps {{delivery.maxSteps}}</h4>
+        <button class="mat-elevation-z4" > <mat-icon>delete_forever</mat-icon></button>
+      </div>
     </li>
-</ul>
+  </ul>

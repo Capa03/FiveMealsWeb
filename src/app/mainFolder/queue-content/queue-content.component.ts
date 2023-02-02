@@ -15,10 +15,8 @@ export class QueueContentComponent {
     this.getProducts(1);
   }
 
-
   getProducts(restaurantId: number) {
     this.mainService.getQueueProducts(restaurantId).subscribe((orderProducts: OrderProduct[]) => {
-
       this.orderProducts = orderProducts;
     });
   }
