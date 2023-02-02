@@ -34,18 +34,15 @@ export class MainService {
     return this.http.get<OrderProduct[]>('http://localhost:5168/ForDeliveryProduct?restaurantId='+`${restaurantid}`, this.httpOptions);
   }
 
-  public updateOrderProducts(orderProduct : OrderProductPatchDTO): void
+  public updateOrderProducts(orderProduct : OrderProductPatchDTO)
   {
-    this.http.put<void>('http://localhost:5168/OrderProduct',orderProduct,this.httpOptions);
-  }
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + localStorage.getItem('Token')
+    });
 
-  public creater() : void {
-    let order = {
-    userEmail: "f@gf.com",
-    orderId: 10,
-    productID: 10
-    }
-    this.http.post<void>('http://localhost:5168/OrderProduct', order ,this.httpOptions);
+    return this.http.patch('http://localhost:5168/OrderProduct',orderProduct,{headers}).subscribe(res =>{
+      console.log(res);
+    });
   }
 
   

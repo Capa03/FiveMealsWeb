@@ -16,7 +16,6 @@ export class ProgressContentComponent {
   getOnProgressProducts(restaurantid:number)
   {
     this.mainService.getOnProgressProducts(restaurantid).subscribe((orderProduct: OrderProduct[])=>{
-      this.mainService.creater();
       this.orderProgress = orderProduct;
     });
   }
