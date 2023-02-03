@@ -27,7 +27,10 @@ export class ProgressContentComponent {
     orderProduct.stepsMade++;
 
     let list: OrderProductPatchDTO[] = [orderProduct];
-    this.mainService.updateOrderProducts(list);
+    this.mainService.updateOrderProducts(list).subscribe(res =>{
+      console.log(res);
+      this.getOnProgressProducts(1);
+    });
   }
 
 

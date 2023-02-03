@@ -40,10 +40,7 @@ export class MainService {
       'Authorization': 'Bearer ' + localStorage.getItem('Token')
     });
 
-    return this.http.patch('http://localhost:5168/OrderProduct',orderProduct,{headers}).subscribe(res =>{
-      console.log(res);
-    });
+    return this.http.patch('http://localhost:5168/OrderProduct',orderProduct,{headers});
   }
 
-  
 }
