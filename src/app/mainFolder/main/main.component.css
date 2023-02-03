@@ -38,6 +38,7 @@ button {
 .content {
     
     height: calc(100vh - 98px);
+    width: 95%;
     margin: 16px;
     margin-left: 32px;
     display: flex;
