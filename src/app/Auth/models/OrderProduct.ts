@@ -12,4 +12,5 @@ export class OrderProduct {
     stepsMade: number = 0;
     maxSteps: number = 0;
     paid: boolean = false;
+    delivered : boolean = false;
 }

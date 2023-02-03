@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MainService} from '../mainService/main.service'
 import { OrderProduct } from 'src/app/Auth/models/OrderProduct';
+import { OrderProductPatchDTO } from 'src/app/Auth/models/OrderProductPatchDTO';
 @Component({
   selector: 'app-delevery-component',
   templateUrl: './delevery-component.component.html',
@@ -18,5 +19,15 @@ export class DeleveryComponentComponent {
       console.log("Delivery" + orderProduct);
       this.orderDelivery = orderProduct;
     });
+  }
+
+  updateOrderProduct(orderProduct: OrderProduct) {
+    orderProduct.delivered = true;
+    let list: OrderProductPatchDTO[] = [orderProduct];
+    this.mainService.updateOrderProducts(list).subscribe(res =>{
+      console.log(res);
+      this.getForDeliveryProducts(1);
+    });
+
   }
 }
