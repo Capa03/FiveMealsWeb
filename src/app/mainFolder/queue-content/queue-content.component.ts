@@ -12,16 +12,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class QueueContentComponent {
 
   orderProducts: OrderProduct[] = [];
+  restaurantId = localStorage.getItem('RESTAURANT_KEY');
 
   constructor(private mainService: MainService, private router: Router, private route: ActivatedRoute) {
-    this.getProducts(1);
+    this.getProducts(Number(this.restaurantId));
   }
 
   getProducts(restaurantId: number) {
     this.mainService.getQueueProducts(restaurantId).subscribe((orderProducts: OrderProduct[]) => {
       this.orderProducts = orderProducts;
     });
-    
   }
 
   updateOrderProduct(orderProduct: OrderProduct) {
@@ -29,7 +29,7 @@ export class QueueContentComponent {
     let list: OrderProductPatchDTO[] = [orderProduct];
     this.mainService.updateOrderProducts(list).subscribe(res =>{
       console.log(res);
-      this.getProducts(1);
+      this.getProducts(Number(this.restaurantId));
     });
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.router.onSameUrlNavigation = 'reload';

@@ -29,7 +29,7 @@ export class LoginComponent {
      
       if (token.token != 'undefined') {
         localStorage.setItem('Token', token.token)
-        this.router.navigate(['/main'])
+        this.router.navigate(['/restaurant'])
         this.errormessage = "";
       } 
     },(error : HttpHeaderResponse)=>{

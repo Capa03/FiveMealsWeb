@@ -14,6 +14,7 @@ import { LoginComponent } from './Auth/login/login.component';
 import { SignupComponent } from './Auth/signup/signup.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './Auth/services/auth.interceptor';
+import { RestaurantComponent } from './restaurant/restaurant.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { AuthInterceptor } from './Auth/services/auth.interceptor';
     MainComponent,
     LoginComponent,
     SignupComponent,
+    RestaurantComponent,
   ],
   imports: [
     BrowserModule,

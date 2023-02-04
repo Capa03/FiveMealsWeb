@@ -9,9 +9,9 @@ import { OrderProductPatchDTO } from 'src/app/Auth/models/OrderProductPatchDTO';
 })
 export class ProgressContentComponent {
   orderProgress : OrderProduct[] = [];  
+  restaurantId = localStorage.getItem('RESTAURANT_KEY');
   constructor(private mainService : MainService){
-    this.getOnProgressProducts(1);
-    
+    this.getOnProgressProducts(Number(this.restaurantId));
   }
 
   getOnProgressProducts(restaurantid:number)
@@ -29,7 +29,7 @@ export class ProgressContentComponent {
     let list: OrderProductPatchDTO[] = [orderProduct];
     this.mainService.updateOrderProducts(list).subscribe(res =>{
       console.log(res);
-      this.getOnProgressProducts(1);
+      this.getOnProgressProducts(Number(this.restaurantId));
     });
   }
 

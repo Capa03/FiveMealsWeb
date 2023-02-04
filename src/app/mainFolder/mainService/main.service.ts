@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OrderProduct } from 'src/app/Auth/models/OrderProduct';
 import { OrderProductPatchDTO } from 'src/app/Auth/models/OrderProductPatchDTO';
+import { Restaurant } from 'src/app/Auth/models/Restaurant';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,11 @@ export class MainService {
     });
 
     return this.http.patch('http://localhost:5168/OrderProduct',orderProduct,{headers});
+  }
+
+  public getAllRestaurant(): Observable<Restaurant[]>
+  {
+    return this.http.get<Restaurant[]>('http://localhost:5168/Restaurant',this.httpOptions);
   }
 
 }

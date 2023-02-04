@@ -42,7 +42,7 @@ export class SignupComponent {
       this.errorMessage = "Password not Match";
     } else {
       this.authService.register(user).subscribe(() => {
-        this.router.navigate(['/main'])
+        this.router.navigate(['/restaurant']);
       }, (error: HttpHeaderResponse) => {
         this.errorMessage = "Bad Credentials";
       });

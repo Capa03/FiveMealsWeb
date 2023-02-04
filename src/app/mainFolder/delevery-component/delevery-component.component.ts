@@ -9,8 +9,9 @@ import { OrderProductPatchDTO } from 'src/app/Auth/models/OrderProductPatchDTO';
 })
 export class DeleveryComponentComponent {
   orderDelivery : OrderProduct[] = [];
+  restaurantId = localStorage.getItem('RESTAURANT_KEY');
   constructor(private mainService : MainService){
-    this.getForDeliveryProducts(1);
+    this.getForDeliveryProducts(Number(this.restaurantId));
   }
 
   getForDeliveryProducts(restaurantid:number)
@@ -26,8 +27,7 @@ export class DeleveryComponentComponent {
     let list: OrderProductPatchDTO[] = [orderProduct];
     this.mainService.updateOrderProducts(list).subscribe(res =>{
       console.log(res);
-      this.getForDeliveryProducts(1);
+      this.getForDeliveryProducts(Number(this.restaurantId));
     });
-
   }
 }
