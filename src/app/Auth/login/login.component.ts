@@ -26,12 +26,15 @@ export class LoginComponent {
 
   login(user: User) {
     this.authService.login(user).subscribe((token: Token) => {
-     
+
       if (token.token != 'undefined') {
-        localStorage.setItem('Token', token.token)
-        this.router.navigate(['/restaurant'])
+        localStorage.setItem('Token', token.token);
+        localStorage.setItem('EMAIL_KEY',user.email);
+        localStorage.setItem('PASSWORD_KEY',user.password);
+        this.router.navigate(['/restaurant']);
+
         this.errormessage = "";
-      } 
+      }
     },(error : HttpHeaderResponse)=>{
       this.errormessage = "Email or Password are not correct or not exist!";
     }

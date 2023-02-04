@@ -42,6 +42,8 @@ export class SignupComponent {
       this.errorMessage = "Password not Match";
     } else {
       this.authService.register(user).subscribe(() => {
+        localStorage.setItem('EMAIL_KEY',user.email);
+        localStorage.setItem('PASSWORD_KEY',user.password);
         this.router.navigate(['/restaurant']);
       }, (error: HttpHeaderResponse) => {
         this.errorMessage = "Bad Credentials";

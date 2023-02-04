@@ -1,7 +1,11 @@
+import { AuthService } from './../Auth/services/authService';
+import { HttpHeaderResponse} from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Restaurant } from '../Auth/models/Restaurant';
 import { MainService } from '../mainFolder/mainService/main.service';
 import { Router } from '@angular/router';
+import { User } from '../Auth/models/User';
+
 @Component({
   selector: 'app-restaurant',
   templateUrl: './restaurant.component.html',
@@ -10,11 +14,29 @@ import { Router } from '@angular/router';
 export class RestaurantComponent {
   restaurantList: Restaurant[] = [];
 
-  constructor(private mainService: MainService, public router: Router){ this.getRestaurant();}
+  constructor(private mainService: MainService,private authService :AuthService, public router: Router){ this.getRestaurant();}
+
+  user : User = new User() ;
 
   getRestaurant(){
     this.mainService.getAllRestaurant().subscribe((restaurants:Restaurant[])=>{
       this.restaurantList = restaurants;
+    },(error : HttpHeaderResponse)=>{
+      if(error.status === 401){
+        let email = localStorage.getItem('EMAIL_KEY');
+        let password = localStorage.getItem('PASSWORD_KEY');
+
+        if(email && password){
+          this.user.email = email;
+          this.user.password = password;
+          this.authService.login(this.user).subscribe(() =>{
+            this.getRestaurant();
+          });
+        }else{
+          console.log("localstorage -> Email/Password Empty")
+        }
+
+      }
     });
   }
 
