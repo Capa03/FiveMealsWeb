@@ -2,6 +2,7 @@
 
 <img src="https://user-images.githubusercontent.com/79425111/166903045-81d3276f-b219-4925-91d7-3f8325a36eb6.png" alt="drawing" width="200"/>
 
+## Descrição
 Five Meals Web é desenvolvido pelas seguintes tecnologias:
 - [Angular](https://angular.io/guide/what-is-angular), 
 - [Html](https://en.wikipedia.org/wiki/HTML),
@@ -9,7 +10,7 @@ Five Meals Web é desenvolvido pelas seguintes tecnologias:
 - [Typescript](https://www.typescriptlang.org/). 
 
 
-Tem como objetivo gerenciar pedidos na cozinha atravez de uma interface simples e intuitiva permitindo a cozinha se organizar de forma interna como tambem gerenciar os pedidos dando feedback em tempo real ao utilizador. Este projeto é um complemento para dar resposta as necessidades do ecosistema do projeto Five Meals ao qual os pedidos são recebidos atravez da nossa aplicação Movel [Five Meals Mobile](https://github.com/Capa03/Five-Meals), e processado pela aplicação Web.
+Tem como objetivo gerenciar pedidos na cozinha atravez de uma interface simples e intuitiva, permitindo a cozinha se organizar de forma interna como tambem gerenciar os pedidos dando feedback em tempo real ao utilizador. Este projeto é um complemento para dar resposta as necessidades do ecosistema do projeto Five Meals, ao qual os pedidos são recebidos atravez da nossa aplicação Movel [Five Meals Mobile](https://github.com/Capa03/Five-Meals), e processado pela aplicação Web.
 
 A aplicação é constituida por cinco partes: 
 - Login/Registo, 
@@ -59,6 +60,17 @@ Fire Base Implementation |X |
 
 
 #### Para mais informação do processo de desenvolvimento ver [Desenvolvimento do projeto](https://github.com/users/Capa03/projects/2)
+
+## Links Importantes
+#### Angular
+* [The Modern Angular Crash Course - 2022](https://www.youtube.com/watch?v=WHv1YQUg6ow)
+#### TypeScript
+* [TypeScript Crash Course](https://www.youtube.com/watch?v=BCg4U1FzODs)
+#### RxJS - Reactive Programing
+* [RxJS Crash Course](https://www.youtube.com/watch?v=tGWBy6Vqq9w)
+* [RxJS Marbles](https://rxmarbles.com/#filter)
+* [Learn RxJS](https://www.learnrxjs.io/learn-rxjs/operators)
+
 
 ## Controlo de Versões
 Ao longo de todo projeto foi utilizado o [Git]() e [SourceTree]() para o gerenciamento do projeto, sendo ferramentas essencialmente importantes para o desenvolvimento . Além disso, o uso do [Git]() e do [SourceTree]() permitiu um desenvolvimento eficiente, garantindo a integridade e a qualidade do código ao longo do tempo. 
