@@ -10,7 +10,7 @@ Five Meals Web é desenvolvido pelas seguintes tecnologias:
 - [Typescript](https://www.typescriptlang.org/). 
 
 
-Tem como objetivo gerenciar pedidos na cozinha atravez de uma interface simples e intuitiva, permitindo a cozinha se organizar de forma interna como tambem gerenciar os pedidos dando feedback em tempo real ao utilizador. Este projeto é um complemento para dar resposta as necessidades do ecosistema do projeto Five Meals, ao qual os pedidos são recebidos atravez da nossa aplicação Movel [Five Meals Mobile](https://github.com/Capa03/Five-Meals), e processado pela aplicação Web.
+Tem como objetivo gerenciar pedidos na cozinha atravez de uma interface simples e intuitiva, permitindo a cozinha organizar-se de forma interna como tambem gerenciar os pedidos dando feedback em tempo real ao utilizador. Este projeto é um complemento para dar resposta as necessidades do ecosistema do projeto Five Meals, ao qual os pedidos são recebidos atravez da nossa aplicação Movel [Five Meals Mobile](https://github.com/Capa03/Five-Meals), e processado pela nossa [FiveMeals API]().
 
 A aplicação é constituida por cinco partes: 
 - Login/Registo, 
