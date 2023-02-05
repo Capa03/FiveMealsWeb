@@ -1,3 +1,4 @@
+import { Token } from 'src/app/Auth/models/Token';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/authService';
@@ -42,6 +43,13 @@ export class SignupComponent {
       this.errorMessage = "Password not Match";
     } else {
       this.authService.register(user).subscribe(() => {
+        this.authService.login(user).subscribe((token: Token) =>{
+          localStorage.setItem('Token',token.token);
+          console.log("login..");
+          this.router.navigate(['/restaurant']);
+        });
+        console.log("Ca dentro");
+
         localStorage.setItem('EMAIL_KEY',user.email);
         localStorage.setItem('PASSWORD_KEY',user.password);
         this.router.navigate(['/restaurant']);
