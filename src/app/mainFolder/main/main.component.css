@@ -1,3 +1,9 @@
+.vl {
+  border-radius: 10px;
+  border-left: 5px solid rgb(65, 64, 64);
+  height: 100vh;
+}
+
 mat-toolbar{
     justify-content: space-between;
 }
@@ -16,7 +22,7 @@ mat-sidenav {
     margin: 16px;
     width: 10%;
     border-radius: 10px;
-    
+
     display: flex;
 }
 
@@ -32,11 +38,11 @@ button {
     display: flex;
     align-items: center;
     font-size: 1rem;
-    
+
 }
 
 .content {
-    
+
     height: calc(100vh - 98px);
     width: 95%;
     margin: 16px;
@@ -56,5 +62,5 @@ button {
 
 .box2{
     height: 100%;
-    width: 50%;
+    width: 48%;
 }

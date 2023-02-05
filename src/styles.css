@@ -15,3 +15,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .error{
     color: red;
 }
+
+.titulo{
+  text-decoration: none;
+  color: #000;
+  background: #eceff1;
+  display: block;
+  padding: 1em;
+  border-radius: 10px;
+  place-items: center;
+}
