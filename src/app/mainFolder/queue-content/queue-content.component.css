@@ -67,9 +67,10 @@ li {
 }
 
 ul {
+  
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
  
 }
 
@@ -87,4 +88,7 @@ ul li .post {
 ul li {
   margin: 32px;
 }
+
+
+
 
