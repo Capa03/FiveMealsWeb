@@ -15,8 +15,9 @@ import { SignupComponent } from './Auth/signup/signup.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './Auth/services/auth.interceptor';
 import { RestaurantComponent } from './restaurant/restaurant.component';
-
-
+import { environment } from "../environments/environment";
+import { initializeApp } from "firebase/app";
+initializeApp(environment.firebase);
 @NgModule({
   declarations: [
     AppComponent,
