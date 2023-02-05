@@ -1,3 +1,4 @@
+import { NotFoundPageComponent } from './ErrorPage/notFoundPage/notFoundPage.component';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { LoginComponent } from './Auth/login/login.component';
@@ -29,7 +30,11 @@ const routes: Routes = [
     pathMatch: 'full',
     component: RestaurantComponent,
     canActivate: [GuardGuard]
-  }];
+  },
+  {path: '404',
+  component: NotFoundPageComponent},
+  {path: '**',
+  redirectTo: '/404'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,3 +1,4 @@
+import { NotFoundPageComponent } from './ErrorPage/notFoundPage/notFoundPage.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -28,6 +29,7 @@ initializeApp(environment.firebase);
     LoginComponent,
     SignupComponent,
     RestaurantComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     BrowserModule,

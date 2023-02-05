@@ -1,0 +1,50 @@
+
+.form-container{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 98px;
+  background: #eceff1;
+  padding: 48px;
+}
+
+.form-group{
+  border: 1rem;
+}
+
+body{
+  height: 100vh;
+  background-color: #e0e0de;
+}
+
+.image{
+  max-width: 300px;
+  border-radius: 16px;
+}
+
+form{
+  margin-left:92px;
+  margin-top: 48px;
+}
+
+span{
+  margin-left: 16px;
+}
+
+input.ng-invalid{
+  border-left: 5px solid red;
+}
+
+input.ng-valid{
+  border-left: 5px solid green;
+}
+
+
+label{
+  font-size: large;
+}
+
+h1 p{
+  margin: auto;
+}
+
