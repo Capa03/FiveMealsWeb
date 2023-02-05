@@ -26,7 +26,7 @@ export class RestaurantComponent {
       if(error.status === 401){
         let email = localStorage.getItem('EMAIL_KEY');
         let password = localStorage.getItem('PASSWORD_KEY');
-        
+
         if(email && password){
           this.user.email = email;
           this.user.password = password;

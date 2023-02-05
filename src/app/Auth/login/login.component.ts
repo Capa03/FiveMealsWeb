@@ -16,6 +16,8 @@ import { HttpHeaderResponse } from '@angular/common/http';
 export class LoginComponent {
   user = new User();
   errormessage = "";
+
+
   constructor(private authService: AuthService, public router: Router) { }
 
   loginForm = new FormGroup({
@@ -26,7 +28,7 @@ export class LoginComponent {
 
   login(user: User) {
     this.authService.login(user).subscribe((token: Token) => {
-
+      
       if (token.token != 'undefined') {
         localStorage.setItem('Token', token.token);
         localStorage.setItem('EMAIL_KEY',user.email);
