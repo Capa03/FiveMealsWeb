@@ -5,6 +5,7 @@ import { Restaurant } from '../Auth/models/Restaurant';
 import { MainService } from '../mainFolder/mainService/main.service';
 import { Router } from '@angular/router';
 import { User } from '../Auth/models/User';
+import {Token} from "src/app/Auth/models/Token";
 
 @Component({
   selector: 'app-restaurant',
@@ -25,11 +26,13 @@ export class RestaurantComponent {
       if(error.status === 401){
         let email = localStorage.getItem('EMAIL_KEY');
         let password = localStorage.getItem('PASSWORD_KEY');
-
+        
         if(email && password){
           this.user.email = email;
           this.user.password = password;
-          this.authService.login(this.user).subscribe(() =>{
+          console.log("Fetching new Token");
+          this.authService.login(this.user).subscribe((token: Token) =>{
+            localStorage.setItem('Token', token.token);
             this.getRestaurant();
           });
         }else{

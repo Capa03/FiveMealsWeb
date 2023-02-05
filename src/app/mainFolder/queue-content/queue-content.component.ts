@@ -6,6 +6,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpHeaderResponse} from '@angular/common/http';
 import { User } from 'src/app/Auth/models/User';
 import { AuthService } from 'src/app/Auth/services/authService';
+import {Token} from "src/app/Auth/models/Token";
+
+
 @Component({
   selector: 'app-queue-content',
   templateUrl: './queue-content.component.html',
@@ -27,11 +30,13 @@ export class QueueContentComponent {
       if(error.status === 401){
         let email = localStorage.getItem('EMAIL_KEY');
         let password = localStorage.getItem('PASSWORD_KEY');
-
+        
         if(email && password){
           this.user.email = email;
           this.user.password = password;
-          this.authService.login(this.user).subscribe(() =>{
+          console.log("Fetching new Token");
+          this.authService.login(this.user).subscribe((token: Token) =>{
+            localStorage.setItem('Token', token.token);
             this.getProducts(Number(this.restaurantId));
           });
         }else{

@@ -5,6 +5,7 @@ import { OrderProductPatchDTO } from 'src/app/Auth/models/OrderProductPatchDTO';
 import { User } from 'src/app/Auth/models/User';
 import { AuthService } from 'src/app/Auth/services/authService';
 import { HttpHeaderResponse } from '@angular/common/http';
+import {Token} from "src/app/Auth/models/Token";
 @Component({
   selector: 'app-progress-content',
   templateUrl:'./progress-content.component.html',
@@ -30,7 +31,9 @@ export class ProgressContentComponent {
           if(email && password){
             this.user.email = email;
             this.user.password = password;
-            this.authService.login(this.user).subscribe(() =>{
+            console.log("Fetching new Token");
+            this.authService.login(this.user).subscribe((token: Token) =>{
+              localStorage.setItem('Token', token.token);
               this.getOnProgressProducts(Number(this.restaurantId));
             });
           }else{

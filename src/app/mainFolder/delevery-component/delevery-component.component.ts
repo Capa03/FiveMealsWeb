@@ -5,6 +5,9 @@ import { OrderProductPatchDTO } from 'src/app/Auth/models/OrderProductPatchDTO';
 import { HttpHeaderResponse } from '@angular/common/http';
 import { User } from 'src/app/Auth/models/User';
 import { AuthService } from 'src/app/Auth/services/authService';
+import {Token} from "src/app/Auth/models/Token";
+
+
 @Component({
   selector: 'app-delevery-component',
   templateUrl: './delevery-component.component.html',
@@ -30,7 +33,9 @@ export class DeleveryComponentComponent {
           if(email && password){
             this.user.email = email;
             this.user.password = password;
-            this.authService.login(this.user).subscribe(() =>{
+            console.log("Fetching new Token");
+            this.authService.login(this.user).subscribe((token: Token) =>{
+              localStorage.setItem('Token', token.token);
               this.getForDeliveryProducts(Number(this.restaurantId));
             });
           }else{
