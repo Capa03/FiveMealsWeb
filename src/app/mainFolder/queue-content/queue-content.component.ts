@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/Auth/services/authService';
 import {Token} from "src/app/Auth/models/Token";
 import { environment } from 'src/environments/environment';
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
-
+import { RestaurantTerminal } from 'src/app/Auth/models/RestaurantTerminal';
 @Component({
   selector: 'app-queue-content',
   templateUrl: './queue-content.component.html',
@@ -19,7 +19,6 @@ export class QueueContentComponent implements OnInit{
 
   title = 'af-notification';
   message:any = null;
-
   user : User = new User() ;
   orderProducts: OrderProduct[] = [];
   restaurantId = localStorage.getItem('RESTAURANT_KEY');
@@ -41,6 +40,11 @@ export class QueueContentComponent implements OnInit{
          if (currentToken) {
            console.log("Hurraaa!!! we got the token.....");
            console.log(currentToken);
+           let terminal: RestaurantTerminal = new RestaurantTerminal();
+           terminal.FireBaseToken = currentToken;
+           terminal.RestaurantId = Number(this.restaurantId);
+           this.mainService.restaurantTerminal(terminal).subscribe(res =>{console.log(res);
+           });
          } else {
            console.log('No registration token available. Request permission to generate one.');
          }
@@ -53,7 +57,8 @@ export class QueueContentComponent implements OnInit{
     const messaging = getMessaging();
     onMessage(messaging, (payload) => {
       console.log('Message received. ', payload);
-      this.getProducts(Number(this.restaurantId));
+      this.getProducts(Number(this.restaurantId))
+
     });
   }
 
