@@ -23,17 +23,17 @@ export class MainService {
 
   public getQueueProducts(restaurantid:number): Observable<OrderProduct[]>
   {
-    return this.http.get<OrderProduct[]>('http://localhost:5168/QueueProduct?restaurantId='+`${restaurantid}`, this.httpOptions);
+    return this.http.get<OrderProduct[]>('https://fivemealsapi.azurewebsites.net/QueueProduct?restaurantId='+`${restaurantid}`, this.httpOptions);
   }
 
   public getOnProgressProducts(restaurantid:number): Observable<OrderProduct[]>
   {
-    return this.http.get<OrderProduct[]>('http://localhost:5168/OnProgressProduct?restaurantId='+`${restaurantid}`, this.httpOptions);
+    return this.http.get<OrderProduct[]>('https://fivemealsapi.azurewebsites.net/OnProgressProduct?restaurantId='+`${restaurantid}`, this.httpOptions);
   }
 
   public getForDeliveryProducts(restaurantid:number): Observable<OrderProduct[]>
   {
-    return this.http.get<OrderProduct[]>('http://localhost:5168/ForDeliveryProduct?restaurantId='+`${restaurantid}`, this.httpOptions);
+    return this.http.get<OrderProduct[]>('https://fivemealsapi.azurewebsites.net/ForDeliveryProduct?restaurantId='+`${restaurantid}`, this.httpOptions);
   }
 
   public updateOrderProducts(orderProduct : OrderProductPatchDTO[])
@@ -42,17 +42,17 @@ export class MainService {
       'Authorization': 'Bearer ' + localStorage.getItem('Token')
     });
 
-    return this.http.patch('http://localhost:5168/OrderProduct',orderProduct,{headers});
+    return this.http.patch('https://fivemealsapi.azurewebsites.net/OrderProduct',orderProduct,{headers});
   }
 
   public getAllRestaurant(): Observable<Restaurant[]>
   {
-    return this.http.get<Restaurant[]>('http://localhost:5168/Restaurant',this.httpOptions);
+    return this.http.get<Restaurant[]>('https://fivemealsapi.azurewebsites.net/Restaurant',this.httpOptions);
   }
 
   public restaurantTerminal(restaurantTerminal:RestaurantTerminal)
   {
-    return this.http.post('http://localhost:5168/RestaurantTerminal',restaurantTerminal,this.httpOptions);
+    return this.http.post('https://fivemealsapi.azurewebsites.net/RestaurantTerminal',restaurantTerminal,this.httpOptions);
   }
 
 }

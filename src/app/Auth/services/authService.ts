@@ -11,15 +11,15 @@ export class AuthService {
   constructor(private http : HttpClient) { }
 
   public register(user: User): Observable<any>{
-    return this.http.post<any>('http://localhost:5168/User',user)
+    return this.http.post<any>('https://fivemealsapi.azurewebsites.net/User',user)
   }
   
   public login(user: User): Observable<any>{
-    return this.http.post<any>('http://localhost:5168/User/Token',user)
+    return this.http.post<any>('https://fivemealsapi.azurewebsites.net/User/Token',user)
   }
 
   public getProducts(): Observable<any>{
-    return this.http.get<any>('http://localhost:5168/CategoryWithProducts/1')
+    return this.http.get<any>('https://fivemealsapi.azurewebsites.net/CategoryWithProducts/1')
   }
 
 }
